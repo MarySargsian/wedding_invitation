@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="hy">
 <head>
-  <meta charset="UTF-8">
-  <title>Մեր Հարսանիքը 💍</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Մեր Հարսանիքի Հրավերը</title>
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg" />
+    Ձեր դիտարկիչը չի աջակցում աուդիո ձևաչափը։
+  </audio>
 
-  <!-- Background Music -->
-  <audio id="bg-music" src="music.mp3" loop></audio>
-
-  <!-- Envelope Stage -->
-  <div id="stage">
-    <img id="envelope" src="envelope.png" alt="Բացիր ինձ">
+  <div id="envelope" class="center-screen">
+    <img src="envelope.png" alt="բացիր ինձ" class="clickable" />
   </div>
 
-  <!-- Opened Envelope GIF -->
-  <div id="opened-envelope" class="hidden">
-    <img src="opened.gif" alt="Բացված նամակ">
+  <div id="opened" class="hidden center-screen">
+    <img src="opened.gif" alt="բացված նամակ" />
   </div>
 
-  <!-- Sliding Letter Container -->
-  <div id="letter-container" class="hidden">
-    <img id="letter1" src="letter1.png" alt="Նամակ">
-    <img id="letter2" src="letter2.png" alt="Օրվա ծրագիրը">
+  <div id="letter" class="hidden">
+    <img src="letter1.png" alt="հրավեր" class="slide-letter" />
+    <img src="letter2.png" alt="օրվա ծրագիրը" class="below" />
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
