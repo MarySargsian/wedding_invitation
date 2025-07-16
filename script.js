@@ -1,23 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const stage = document.getElementById("stage");
-  const opened = document.getElementById("opened");
-  const letter = document.getElementById("letter");
-
-  // Entire stage (envelope) is clickable
-  stage.addEventListener("click", () => {
-    // Hide closed envelope
-    stage.classList.add("hidden");
-
-    // Show opened envelope GIF
-    opened.classList.remove("hidden");
-
-    // Wait for GIF duration, then show the letter
-    setTimeout(() => {
-      opened.classList.add("hidden");
-      letter.classList.remove("hidden");
-
-      // Scroll to top of letter section
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 3000); // Adjust duration to match your gif
+document.getElementById("open-btn").addEventListener("click", () => {
+  // Start music
+  const music = document.getElementById("bg-music");
+  music.play().catch(e => {
+    console.log("Autoplay failed:", e);
   });
+
+  // Hide envelope stage
+  document.getElementById("stage").classList.add("hidden");
+
+  // Show opened envelope gif
+  const opened = document.getElementById("opened-envelope");
+  opened.classList.remove("hidden");
+
+  // After GIF shows for 2.5s, show the sliding letter
+  setTimeout(() => {
+    opened.classList.add("hidden");
+    document.getElementById("letter-container").classList.remove("hidden");
+  }, 2500);
 });
