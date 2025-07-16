@@ -1,15 +1,17 @@
-const envelope = document.getElementById("envelope");
+document.addEventListener("DOMContentLoaded", () => {
+  const envelope = document.getElementById("envelope");
+  const opened = document.getElementById("opened");
+  const letter = document.getElementById("letter");
 
-envelope.addEventListener("click", () => {
-  const music = document.getElementById("bg-music");
-  music.play().catch(e => console.log("Autoplay blocked"));
+  envelope.addEventListener("click", () => {
+    envelope.classList.add("hidden");
+    opened.classList.remove("hidden");
 
-  document.getElementById("stage").classList.add("hidden");
-  const opened = document.getElementById("opened-envelope");
-  opened.classList.remove("hidden");
-
-  setTimeout(() => {
-    opened.classList.add("hidden");
-    document.getElementById("letter-container").classList.remove("hidden");
-  }, 2500); // Adjust this if your GIF lasts longer/shorter
+    // Show letter after 2.5 seconds (adjust to match your GIF length)
+    setTimeout(() => {
+      opened.classList.add("hidden");
+      letter.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 2500);
+  });
 });
